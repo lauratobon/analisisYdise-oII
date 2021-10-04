@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Stores</h1>
+<div class="row">
+    {% for store in stores %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static store.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ store.name }}</h5>
+                <p class="card-text">{{ store.type }}</p>
+                <!--  <p class="card-text">{{ store.address }}</p>
+                <p class="card-text">{{ store.email }}</p>
+                <p class="card-text">{{ store.phone }}</p> -->
+                <a href="{% url 'store_detail' store.pk %}" class="btn btn-primary">
+                    Ver más
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

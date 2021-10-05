@@ -10,4 +10,8 @@ urlpatterns = [
     path("new_store", views.new_store, name="new_store"),
     path("store_delete/<int:pk>", views.store_delete,
          name="store_delete"),
+    path("edit_store/<int:pk>", views.edit_store,
+         name="edit_store"),
+    path("save_edit/<int:pk>", views.save_edit,
+         name="save_edit"),
 ]

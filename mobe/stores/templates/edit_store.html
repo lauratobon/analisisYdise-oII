@@ -14,27 +14,21 @@
         <div class="container">
             <div class="row">
                 <div class="mx-auto col-lg-6 col-10">
-                    <h1>Bienvenido!!!</h1>
-                    <p class="mb-3">Registre su negocio y muéstrelo al mundo</p>
-                    <form class="text-left" action="{% url 'new_store' %}" method="post">{% csrf_token %}
+                    <h1>Editar negocio</h1>
+                    <p class="mb-3">Por favor edite los campos que desee</p>
+                    <form class="text-left" action="{% url 'save_edit' store.pk %}" method="post">{% csrf_token %}
                         <div class="form-group"> <label for="name">Nombre del negocio</label> <input type="text"
-                                class="form-control" name="name" id="form16" placeholder="El nombre de tu negocio">
+                                class="form-control" name="name" id="form16" value="{{ store.name }}">
                         </div>
                         <div class="form-group"> <label for="type">Tipo de negocio</label> <input type="text"
-                                class="form-control" name="type" id="form17" placeholder="Tipo de negocio"> </div>
+                                class="form-control" name="type" id="form17" value="{{ store.type }}"> </div>
                         <div class="form-group"> <label for="address">Dirección</label> <input type="text"
-                                class="form-control" name="address" id="form18" placeholder="Dirección de tu negocio">
+                                class="form-control" name="address" id="form18" value="{{ store.address }}">
                         </div>
                         <div class="form-group"> <label for="email">Email</label> <input type="email"
-                                class="form-control" name="email" id="form18" placeholder="tuemail@email.com"> </div>
+                                class="form-control" name="email" id="form18" value="{{ store.email }}"> </div>
                         <div class="form-group"> <label for="phone">Teléfono</label> <input type="text"
-                                class="form-control" name="phone" id="form18"
-                                placeholder="Número telefónico de tu negocio"> </div>
-                        <div class="form-group"> <label for="image">Logo de tu negocio</div>
-                        <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
-                                    <input type="file" name="imagen1" />
-                                    <input type="submit" name="subir-imagen" value="Enviar imagen" />
-                        </form>
+                                class="form-control" name="phone" id="form18" value="{{ store.phone }}"> </div>
 
 
                         <!--                         <div class="form-row">
@@ -50,7 +44,7 @@
                             <div class="form-check"> <input class="form-check-input" type="checkbox" id="form21"
                                     value="on"> <label class="form-check-label" for="form21"> Acepto los <a
                                         href="#">Términos y condiciones</a> del servicio </label> </div>
-                        </div> <button type="submit" class="btn btn-primary">Crear</button>
+                        </div> <button type="submit" class="btn btn-primary">Editar</button>
                     </form>
                 </div>
             </div>

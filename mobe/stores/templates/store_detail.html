@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>{{ store.name }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        <img src="{% static store.image %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+            <h5>About the store:</h5>
+            <p>{{ store.type }}</p>
+            <br>
+            <h5>Address:</h5>
+            <p>{{ store.address }}</p>
+            <br>
+            <h5>Email:</h5>
+            <p>{{ store.email }}</p>
+            <br>
+            <h5>Phone:</h5>
+            <p>{{ store.phone }}</p>
+            <a href="{% url 'store_delete' store.pk %}" class="btn btn-primary">
+                Borrar
+            </a>
+            <a href="{% url 'edit_store' store.pk %}" class="btn btn-primary">
+                Editar
+            </a>
+</div>
+</div>
+{% endblock %}
